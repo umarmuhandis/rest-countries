@@ -1,0 +1,269 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 0%, 98%);
+  font-family: "Nunito Sans", sans-serif;
+}
+
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  padding: 20px 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: hsl(200, 15%, 8%);
+  margin: 0;
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  color: hsl(200, 15%, 8%);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(0, 0%, 52%);
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: hsl(209, 23%, 22%);
+}
+
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+.theme-text {
+  font-size: 14px;
+}
+
+/* MAIN */
+
+main {
+  background-color: hsl(0, 0%, 98%);
+  padding: 40px 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 400px;
+}
+
+.search-input .fa-search {
+  position: absolute;
+  left: 12px;
+  color: hsl(0, 0%, 52%);
+}
+
+.search-input button {
+  position: absolute;
+  right: 12px;
+  color: hsl(0, 0%, 52%);
+  cursor: pointer;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  padding-left: 48px;
+  border-radius: 4px;
+  border: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: hsl(200, 15%, 8%);
+  background-color: #fff;
+}
+
+input[type="text"]::placeholder {
+  color: hsl(0, 0%, 60%);
+}
+
+.select-container {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+select {
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
+  appearance: none;
+  position: relative;
+  color: hsl(200, 15%, 8%);
+  background-color: #fff;
+}
+
+input[type="text"],
+select {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add the box-shadow property */
+}
+
+option {
+  font-weight: 600;
+}
+
+.cards-section {
+  background-color: hsl(0, 0%, 98%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  grid-gap: 20px; /* Add space between card elements */
+}
+.card {
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.card-img {
+  max-width: 50%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 5px 5px 0 0;
+}
+
+.card-title {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 20px;
+  color: hsl(200, 15%, 8%);
+}
+
+.card-text {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0 20px 8px;
+  color: hsl(200, 15%, 8%);
+}
+
+.card-details {
+  padding: 5px 10px;
+}
+
+.card-info-label {
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .card-row {
+    grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .select-container {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .theme-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-row {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on tablets */
+  }
+}
+
+/* DETAILS PAGE */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(200, 15%, 8%);
+  border: none;
+  box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+.btn--small {
+  padding: 8px 16px;
+}
