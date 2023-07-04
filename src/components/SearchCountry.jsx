@@ -1,7 +1,7 @@
 import React from "react";
 import { COUNTRY_REGIONS } from "../constant";
 
-const SearchCountry = () => {
+const SearchCountry = ({ countryName, setCountryName }) => {
   return (
     <div className="search-container">
       <div className="search-input">
@@ -9,6 +9,8 @@ const SearchCountry = () => {
           type="text"
           id="search-input"
           placeholder="Search for a country..."
+          value={countryName}
+          onChange={(e) => setCountryName(e.target.value)}
         />
         <i className="fas fa-search"></i>
       </div>

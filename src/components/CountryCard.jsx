@@ -1,23 +1,19 @@
 import React from "react";
 
-const CountryCard = (props) => {
+const CountryCard = ({ title, population, regionValue, capital, flag }) => {
   return (
     <div className="card">
-      <img
-        className="w-full h-auto"
-        src="https://flagcdn.com/w320/uz.png"
-        alt="Country Flag"
-      />
+      <img className="w-full h-auto" src={flag} alt="Country Flag" />
       <div className="card-details">
-        <h3 className="card-title">Country Title</h3>
+        <h3 className="card-title">{title}</h3>
         <p className="card-text">
-          <span className="card-info-label">Population:</span> Population Value
+          <span className="card-info-label">Population:</span> {population}
         </p>
         <p className="card-text">
-          <span className="card-info-label">Region:</span> Region Value
+          <span className="card-info-label">Region:</span> {regionValue}
         </p>
         <p className="card-text">
-          <span className="card-info-label">Capital:</span> Capital Value
+          <span className="card-info-label">Capital:</span> {capital}
         </p>
       </div>
     </div>
