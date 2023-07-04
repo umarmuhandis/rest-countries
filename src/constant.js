@@ -6,3 +6,5 @@ export const COUNTRY_REGIONS = [
   { label: "Europe", value: "Europe" },
   { label: "Oceania", value: "Oceania" },
 ];
+
+export const BASE_URL = "https://restcountries.com/v3.1";
